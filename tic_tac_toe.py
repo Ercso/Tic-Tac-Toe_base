@@ -20,6 +20,14 @@ def main():
         # alternate the value of `current_player` from `X` to `O`
         current_player = 'X'
         
+        if game_mode == HUMAN_VS_RANDOM_AI or game_mode == HUMAN_VS_UNBEATABLE_AI:
+            current_player = 'O'
+        elif game_mode == RANDOM_AI_VS_RANDOM_AI:
+            if current_player == 'X':
+                current_player = 'O'
+            else:
+                current_player = 'X'
+        
         ### TO DO ###
         # based on the value of the variables `game_mode` and `current_player` 
         # the programm should should choose betwen the functions
