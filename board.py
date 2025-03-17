@@ -3,6 +3,13 @@ def get_empty_board():
     Should return a list with 3 sublists.
     Each sublist should contain 3 time the "." character
     '''
+    print('1   2   3')
+    print('A   . | . | . ')
+    print('---+---+---')
+    print('B   . | . | . ')
+    print('---+---+---')
+    print('C   . | . | . ')
+    print('---+---+---')
     pass
 
 
@@ -25,6 +32,7 @@ def is_board_full(board):
   should return True if there are no more empty place on the board,
   otherwise should return False
   """
+
   pass
 
 

@@ -7,7 +7,6 @@ HUMAN_VS_HUMAN = 1
 RANDOM_AI_VS_RANDOM_AI = 2
 HUMAN_VS_RANDOM_AI = 3
 HUMAN_VS_UNBEATABLE_AI = 4
-
 def main():
     game_mode = get_menu_option()
     board = get_empty_board()
@@ -30,11 +29,20 @@ def main():
         
         ### TO DO ###
         # based on the value of the variables `game_mode` and `current_player` 
-        # the programm should should choose betwen the functions
-        # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
+        # the programm should choose between the functions
+        # get_random_ai_coordinates or get_unbeatable_ai_coordinates or get_human_coordinates
         x, y = get_human_coordinates(board, current_player)
         
         board[x][y] = current_player
+        
+        display_board(board)
+    
+        if game_mode == HUMAN_VS_RANDOM_AI or game_mode == RANDOM_AI_VS_RANDOM_AI:
+            x, y = get_random_ai_coordinates(board, current_player)
+        elif game_mode == HUMAN_VS_UNBEATABLE_AI:
+            x, y = get_unbeatable_ai_coordinates(board, current_player)
+        elif game_mode == HUMAN_VS_HUMAN:
+            x, y = get_human_coordinates(board, current_player)
         
         ### TO DO ###
         # based on the values of `winning_player` and `its_a_tie` the program

@@ -10,6 +10,14 @@ def get_human_coordinates(board, current_player):
   If the user enters the word "quit" in any format of capitalized letters the program
   should stop.
   """
+  human = input('Enter your coordinates: ')
+  if human == 'quit':
+    return
+  elif human == 'A1' or human == 'B2' or human == 'C3':
+    return
+  else:
+    print('Invalid coordinates')
+    return
   pass
 
 
@@ -21,6 +29,7 @@ def get_random_ai_coordinates(board, current_player):
   If the board is full (all spots taken by either X or O) than "None"
   should be returned.
   """
+  
   pass
 
 
