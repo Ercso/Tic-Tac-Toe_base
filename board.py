@@ -3,13 +3,13 @@ def get_empty_board():
     Should return a list with 3 sublists.
     Each sublist should contain 3 time the "." character
     '''
-    print('1   2   3')
-    print('A   . | . | . ')
-    print('---+---+---')
-    print('B   . | . | . ')
-    print('---+---+---')
-    print('C   . | . | . ')
-    print('---+---+---')
+    board = []
+    for _ in range(3):
+        row = []
+        for _ in range(3):
+            row.append('.')
+        board.append(row)
+    return board
     pass
 
 
@@ -24,6 +24,11 @@ def display_board(board):
     C   0 | X | . 
        --+---+---
   """
+  print(f'\n       1        2        3  \n')
+
+   for sor, sor_index in zip(board, ("A", "B", "C")):
+      print(f'{sor_index}      {sor[0]}   |    {sor[1]}    |   {sor[2]}   | ')
+      print(f'    - - -  +   - - - + - - - - ')
   pass
 
 

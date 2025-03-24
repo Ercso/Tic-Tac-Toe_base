@@ -29,6 +29,21 @@ def get_random_ai_coordinates(board, current_player):
   If the board is full (all spots taken by either X or O) than "None"
   should be returned.
   """
+  bestScore = -1000
+  bestMove = (-1,-1)
+
+  for i in range(len(board)):
+    for j in range(len(board)):
+      if board[i][j] == ".":
+        board[i][j] = current_player
+        score = minimax(board, 0, False, current_player)
+        board[i][j] = "."
+        if (score > bestScore):
+          bestScore = score
+          bestMove = (i, j)
+
+  return bestMove
+
   
   pass
 
